@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- CHO ANH HAY TRAO MONG THU ANH DANG CHO -->
+    <!-- XU LY CHUOI SAP XEP THEO TRINH TU: HAY TRAO CHO ANH THU ANH DANG MONG CHO-->
+    <!-- CHO NAO CO CHU ANH + VU -->
+    <!-- THAY THE CHU CHO -> DOI EM -->
+
+    <div id="main">
+        <h1 style="color: red">Vũ Tuấn Trẩu</h1>
+        <label for="str">Nhập chuỗi: "CHO ANH HAY TRAO MONG THU ANH DANG CHO"</label><br>
+        <input type="text" id="str">
+        <input type="button" onclick="replace()" value="Change">
+    </div>
+
+
+    <p style="text-align: center; color: red; font-size: 20px" id="result"></p>
+</body>
+<style>
+    #main {
+        width: 80%;
+        margin: 0 auto;
+    }
+    
+    #str {
+        width: 50%;
+    }
+</style>
+<script>
+    function replace() {
+        var str2 = document.getElementById('str');
+        var str = document.getElementById('str').value;
+        var print = document.getElementById('result');
+
+        var result = "CHO ANH HAY TRAO MONG THU ANH DANG CHO";
+        if (str === result) {
+            var changeToArr = result.split(" ");
+            changeToArr.splice(0, 9, "hãy", "trao", "đời", "em", "cho", "anh", "vũ", "thứ", "anh", "vũ", "đang", "mong", "chờ");
+            var txt = "";
+            for (i = 0; i < changeToArr.length; i++) {
+                txt += changeToArr[i] + " ";
+            }
+            print.innerHTML = txt.toUpperCase() + "<br>Nghe xạo lol vc";
+        } else if (str === "") {
+            str2.value = "";
+            print.innerHTML = "";
+            alert('Đm nhập vô');
+        } else {
+            str2.value = "";
+            print.innerHTML = "";
+            alert('Nhập cho đúng thằng lol');
+        }
+    }
+</script>
+
+</html>
